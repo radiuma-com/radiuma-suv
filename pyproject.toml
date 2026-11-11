@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "radiuma-suv"
+version = "1.0.0"
+description = "PET DICOM to body-weight-normalized standardized uptake value (SUVbw) conversion"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Mohammad R. Salmanpour"},
+  {name = "Ramin Afrah"},
+  {name = "Mehrdad Oveisi"},
+  {name = "Arman Rahmim"},
+]
+dependencies = ["numpy>=1.24", "pydicom>=3.0", "SimpleITK>=2.3"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "build>=1.2", "ruff>=0.8"]
+
+[project.scripts]
+radiuma-suv = "radiuma_suv.cli:main"
+
+[project.urls]
+Repository = "https://github.com/radiuma-com/radiuma-suv"
+Issues = "https://github.com/radiuma-com/radiuma-suv/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

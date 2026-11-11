@@ -1,0 +1,4 @@
+# Runtime dependencies; the source of truth is pyproject.toml
+numpy>=1.24
+pydicom>=3.0
+SimpleITK>=2.3

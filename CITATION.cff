@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite this software repository and its version when using radiuma-suv."
+title: "radiuma-suv: PET to SUVbw conversion"
+type: software
+authors:
+  - family-names: Salmanpour
+    given-names: Mohammad R.
+  - family-names: Afrah
+    given-names: Ramin
+  - family-names: Oveisi
+    given-names: Mehrdad
+  - family-names: Rahmim
+    given-names: Arman
+version: 1.0.0
+repository-code: "https://github.com/radiuma-com/radiuma-suv"
+license: MIT

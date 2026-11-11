@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+build/
+dist/
+# IDE, OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+# Sensitive / large medical imaging inputs & derived outputs
+*.dcm
+*.dicom
+*.ima
+*.nii
+*.nii.gz
+*.nrrd
+*.nhdr
+*.npy
+*.npz
+*_processed/
+*_processed.dcm
+# secrets
+.env
+.env.*
+!.env.example
