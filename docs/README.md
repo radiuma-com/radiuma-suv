@@ -48,7 +48,38 @@ Coming soon
 
 ## 🧩 IBSI Standardization
 
-The radiuma-suv performs based on IBSI SUV correction(IBSI3). 
+We have three versions of the software/code for [IBSI Compliance-SUV Calibrations](https://theibsi.github.io/ibsi-suv/).
+-	Version 1: before the start of IBSI-SUV
+-	Version 2: Calibrated with the first standardization attempt and with the first 17 DROs.  
+-	Version 3: Calibrated with the second standardization attempt and with all 58 DROs.
+IBSI calibration datasets are available for [download](https://github.com/oncoray/suv_computation)
+
+Report of Calibrations
+Calibration 1 (Just the first 17 DROs)
+•	Use Code Version 2 and the first 17 DROs. 
+o	Result 1, called “Version 2_Callibration 1_radiuma_suv_PySERA.csv”
+	Note: We already submitted this result, but we include it in this collection for your easy access.
+
+Calibration 2 (All 58 DROs)
+•	Use Code Version 3 and all 58 DROs. 
+o	Result 2, called “Version 3_Callibration 2_ radiuma_suv_PySERA.csv”
+
+•	Use Code Version 2 and all 58 DROs. 
+o	Result 3, called “Version 2_Callibration 2_ radiuma_suv_PySERA.csv”
+
+•	Use Code Version 1 and all 58 DROs. 
+o	Result 4, called “Version 1_Callibration 2_ radiuma_suv_PySERA.csv”
+
+Calibration 3 ( All 16 Real Patients: Final Validation Phase)
+•	Use Code Version 3 and all 16 real patients (Validation phase). 
+o	Result 5, called “Version 3_Callibration 3_ radiuma_suv_PySERA.csv”
+
+•	Use Code Version 2 and all 16 real patients (Validation phase). 
+o	Result 6, called “Version 2_Callibration 3_ radiuma_suv_PySERA.csv”
+
+•	Use Code Version 1 and all 16 real patients (Validation phase). 
+o	Result 7, called “Version 1_Callibration 3_ radiuma_suv_PySERA.csv”
+
 
 ## ✨ Key Features
 
