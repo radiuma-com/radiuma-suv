@@ -110,7 +110,7 @@ Import the conversion functions into another Python application, pipeline, or GU
 **Option A: DICOM file or directory**
 
 ```python
-from radiuma_suv import radiuma_suv_from_input
+from radiuma-suv import radiuma_suv_from_input
 
 output, metadata = radiuma_suv_from_input(
     image_input="PET_Input",
