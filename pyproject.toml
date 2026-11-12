@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "radiuma_suv"
 version = "1.0.1"
 description = "PET DICOM to body-weight-normalized standardized uptake value (SUVbw) conversion"
-readme = "README.md"
+readme = "docs/README.md"
 requires-python = ">=3.10"
 license = {file = "LICENSE"}
 authors = [
