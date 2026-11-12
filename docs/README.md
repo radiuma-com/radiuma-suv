@@ -122,7 +122,7 @@ output, metadata = radiuma_suv_from_input(
 **Option B: NumPy array with DICOM metadata**
 
 ```python
-from radiuma_suv import radiuma_suv
+from radiuma-suv import radiuma_suv
 
 suv_array, metadata = radiuma_suv(
     input_array=pet_array,
@@ -134,7 +134,7 @@ suv_array, metadata = radiuma_suv(
 **Option C: Object-oriented integration**
 
 ```python
-from radiuma_suv import RadiumaSUVLoader
+from radiuma-suv import RadiumaSUVLoader
 
 converter = RadiumaSUVLoader(parameter_estimation="OFF")
 output, metadata = converter.convert("PET_Input")
@@ -193,7 +193,7 @@ The notebook contains an example `if __name__ == "__main__":` block but **does n
 
 ```python
 # convert_pet.py
-from radiuma_suv import radiuma_suv_from_input
+from radiuma-suv import radiuma_suv_from_input
 path, headers = radiuma_suv_from_input("pet_scan.dcm", parameter_estimation="OFF")
 print(path)
 ```
@@ -318,7 +318,7 @@ Detects input representation and returns a matching result: a NumPy array or a n
 Detects input representation and returns a matching result: a new DICOM output file/folder path, it replace missed parameters in input image DICOM header with default vlues defined in code. DICOM source objects are not deliberately overwritten.
 
 ```python
-from radiuma_suv import RadiumaSUVLoader
+from radiuma-suv import RadiumaSUVLoader
 converter = RadiumaSUVLoader(parameter_estimation="OFF", output_path="pet_output.dcm")
 output, metadata = converter.convert("pet_input.dcm")
 ```
@@ -350,12 +350,12 @@ output, metadata = converter.convert("pet_input.dcm")
 ### Example 1: Single DICOM
 
 ```python
-from radiuma_suv import radiuma_suv_from_input
+from radiuma-suv import radiuma_suv_from_input
 result, meta = radiuma_suv_from_input("pet.dcm", parameter_estimation="OFF")
 print(result)
 ```
 ```python
-from radiuma_suv import radiuma_suv_from_input
+from radiuma-suv import radiuma_suv_from_input
 result, meta = radiuma_suv_from_input("pet.dcm", parameter_estimation="ON")
 print(result)
 ```
@@ -363,13 +363,13 @@ print(result)
 ### Example 2: Multiple PET folders
 
 ```python
-from radiuma_suv import radiuma_suv_from_input
+from radiuma-suv import radiuma_suv_from_input
 out, headers = radiuma_suv_from_input(
     "PET_Input", parameter_estimation="OFF", output_path="SUV_Output"
 )
 ```
 ```python
-from radiuma_suv import radiuma_suv_from_input
+from radiuma-suv import radiuma_suv_from_input
 out, headers = radiuma_suv_from_input(
     "PET_Input", parameter_estimation="ON", output_path="SUV_Output"
 )
@@ -379,14 +379,14 @@ out, headers = radiuma_suv_from_input(
 
 ```python
 import numpy as np
-from radiuma_suv import radiuma_suv
+from radiuma-suv import radiuma_suv
 pixels = np.load("pet_pixels.npy")
 # Load the genuine DICOM metadata for the same scan.
 suv, meta = radiuma_suv(pixels, matching_pet_dicom_metadata, "OFF")
 ```
 ```python
 import numpy as np
-from radiuma_suv import radiuma_suv
+from radiuma-suv import radiuma_suv
 pixels = np.load("pet_pixels.npy")
 # Load the genuine DICOM metadata for the same scan.
 suv, meta = radiuma_suv(pixels, matching_pet_dicom_metadata, "ON")
