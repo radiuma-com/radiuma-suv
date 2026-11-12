@@ -17,9 +17,9 @@ authors = [
 ]
 dependencies = ["numpy>=1.24", "pydicom>=3.0", "SimpleITK>=2.3"]
 classifiers = [
-  "Programming Language :: Python :: 3",
-  "Operating System :: OS Independent",
-  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
 ]
 
 [project.optional-dependencies]
