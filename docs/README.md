@@ -60,10 +60,11 @@ We have [three versions of the software/code](https://github.com/radiuma-com/rad
 IBSI calibration datasets are available for [download](https://github.com/oncoray/suv_computation)
 
 Report of Calibrations
+
 "Calibration 1 (Just the first 17 DROs)"
- •	Use Code Version 2 and the first 17 DROs. 
-   o	Result 1, called “Version 2_Callibration 1.csv”
-    Note: We already submitted this result, but we include it in this collection for your easy access.
+     •	Use Code Version 2 and the first 17 DROs. 
+       o	Result 1, called “Version 2_Callibration 1.csv”
+          Note: We already submitted this result, but we include it in this collection for your easy access.
 
 "Calibration 2 (All 58 DROs)"
    •	Use Code Version 3 and all 58 DROs. 
