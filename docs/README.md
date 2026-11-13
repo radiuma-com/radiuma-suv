@@ -62,23 +62,23 @@ o	Result 1, called “Version 2_Callibration 1_radiuma-suv_PySERA.csv”
 
 Calibration 2 (All 58 DROs)
 •	Use Code Version 3 and all 58 DROs. 
-o	Result 2, called “[Version 3_Callibration 2_ radiuma-suv_PySERA.csv](https://github.com/radiuma-com/radiuma-suv/tree/main/IBSI%20compliance%20calibration%20code)”
+o	Result 2, called “[Version 3_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/tree/main/IBSI%20compliance%20calibration%20code)”
 
 •	Use Code Version 2 and all 58 DROs. 
-o	Result 3, called “[Version 2_Callibration 2_ radiuma-suv_PySERA.csv](https://github.com/radiuma-com/radiuma-suv/tree/main/IBSI%20compliance%20calibration%20code)”
+o	Result 3, called “[Version 2_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/tree/main/IBSI%20compliance%20calibration%20code)”
 
 •	Use Code Version 1 and all 58 DROs. 
-o	Result 4, called “[Version 1_Callibration 2_ radiuma-suv_PySERA.csv](https://github.com/radiuma-com/radiuma-suv/tree/main/IBSI%20compliance%20calibration%20code)”
+o	Result 4, called “[Version 1_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/tree/main/IBSI%20compliance%20calibration%20code)”
 
 Calibration 3 ( All 16 Real Patients: Final Validation Phase)
 •	Use Code Version 3 and all 16 real patients (Validation phase). 
-o	Result 5, called “Version 3_Callibration 3_ radiuma-suv_PySERA.csv”
+o	Result 5, called “Version 3_Callibration 3.csv”
 
 •	Use Code Version 2 and all 16 real patients (Validation phase). 
-o	Result 6, called “Version 2_Callibration 3_ radiuma-suv_PySERA.csv”
+o	Result 6, called “Version 2_Callibration 3.csv”
 
 •	Use Code Version 1 and all 16 real patients (Validation phase). 
-o	Result 7, called “Version 1_Callibration 3_ radiuma-suv_PySERA.csv”
+o	Result 7, called “Version 1_Callibration 3.csv”
 
 
 ## ✨ Key Features
