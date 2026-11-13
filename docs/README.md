@@ -61,10 +61,11 @@ IBSI calibration datasets are available for [download](https://github.com/oncora
 
 Report of Calibrations
 
-"Calibration 1 (Just the first 17 DROs)"
-     •	Use Code Version 2 and the first 17 DROs.  
-       o	Result 1, called “Version 2_Callibration 1.csv”
-          Note: We already submitted this result, but we include it in this collection for your easy access.  
+**Calibration 1 (Just the First 17 DROs)**
+
+- Use Code Version 2 and the first 17 DROs.
+  - Result 1, called `Version 2_Calibration 1.csv`
+    - **Note:** We already submitted this result, but we include it in this collection for your easy access.
           
 
 "Calibration 2 (All 58 DROs)"
