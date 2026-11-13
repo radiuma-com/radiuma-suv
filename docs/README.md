@@ -47,7 +47,7 @@ The code provides three main interfaces:
 
 ## 🎥 YouTube Tutorials
 
-[Watch our tutorial videos on our YouTube channel](https://www.youtube.com/@Radiuma-software)
+Watch our tutorial videos on our [YouTube channel](https://www.youtube.com/@Radiuma-software)
 - Video 1 (coming soon)
 
 
