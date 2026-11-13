@@ -48,7 +48,7 @@ Coming soon
 
 ## 🧩 IBSI Standardization & Collibration
 
-We have [three versions of the software/code](https://github.com/radiuma-com/radiuma-suv/tree/main/IBSI-Calibration/IBSI-Validated-Code-Versions for [IBSI Compliance-SUV Calibrations](https://theibsi.github.io/ibsi-suv/).
+We have "[three versions of the software/code](https://github.com/radiuma-com/radiuma-suv/tree/main/IBSI-Calibration/IBSI-Validated-Code-Versions)" for [IBSI Compliance-SUV Calibrations](https://theibsi.github.io/ibsi-suv/).
 -	Version 1: before the start of IBSI-SUV
 -	Version 2: Calibrated with the first standardization attempt and with the first 17 DROs.  
 -	Version 3: Calibrated with the second standardization attempt and with all 58 DROs.
