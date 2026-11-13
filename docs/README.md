@@ -84,7 +84,7 @@ Report of Calibrations
    - [Result 5, called Version 3_Callibration 3.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%204%2C%20called%20Version%201_Callibration%202.csv)”
 
  - Use Code Version 2 and all 16 real patients (Validation phase). 
-   - Result 6, called “Version 2_Callibration 3.csv”
+   - [Result 6, called “Version 2_Callibration 3.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%206%2C%20called%20Version%202_Callibration%203.csv)
 
  - Use Code Version 1 and all 16 real patients (Validation phase). 
    - Result 7, called “Version 1_Callibration 3.csv”
