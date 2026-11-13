@@ -42,12 +42,13 @@ The code provides three main interfaces:
 - [📬 Contact](#-contact)
 - [👥 Authors](#-authors)
 - [📚 Citation](#-citation)
-- [🙏 Acknowledgment](#-acknowledgment) 
+- [🙏 Acknowledgment](#acknowledgment)
 - [📜 License](#-license)
 
 ## 🎥 YouTube Tutorials
 
 [Watch our tutorial videos on our YouTube channel](https://www.youtube.com/@Radiuma-software)
+Video 1 (coming soon)
 
 
 ## 🧩 IBSI Standardization & Colibration
