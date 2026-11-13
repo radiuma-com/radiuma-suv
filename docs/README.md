@@ -17,7 +17,7 @@ The code provides three main interfaces:
 ## 🔍 Table of Contents
 
 - [🎥 YouTube Tutorials](#-youtube-tutorials)
-- [🧩 IBSI Standardization](#-ibsi-standardization)
+- [🧩 IBSI Standardization & Collibration](#-ibsi-standardization)
 - [✨ Key Features](#-key-features)
 - [📚 Library Usage](#-library-usage)
   - [📂 Single File Processing](#-single-file-processing)
@@ -46,7 +46,7 @@ The code provides three main interfaces:
 Coming soon
 
 
-## 🧩 IBSI Standardization
+## 🧩 IBSI Standardization & Collibration
 
 We have three versions of the software/code for [IBSI Compliance-SUV Calibrations](https://theibsi.github.io/ibsi-suv/).
 -	Version 1: before the start of IBSI-SUV
