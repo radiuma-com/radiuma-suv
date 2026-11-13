@@ -57,22 +57,22 @@ IBSI calibration datasets are available for [download](https://github.com/oncora
 Report of Calibrations
 Calibration 1 (Just the first 17 DROs)
 •	Use Code Version 2 and the first 17 DROs. 
-o	Result 1, called “Version 2_Callibration 1_radiuma-suv_PySERA.csv”
+o	Result 1, called “Version 2_Callibration 1.csv”
 	Note: We already submitted this result, but we include it in this collection for your easy access.
 
 Calibration 2 (All 58 DROs)
 •	Use Code Version 3 and all 58 DROs. 
-o	Result 2, called “[Version 3_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/tree/main/IBSI%20compliance%20calibration%20code)”
+o	Result 2, called “[Version 3_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%201%2C%20called%20Version%202_Callibration%201.csv)”
 
 •	Use Code Version 2 and all 58 DROs. 
-o	Result 3, called “[Version 2_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/tree/main/IBSI%20compliance%20calibration%20code)”
+o	Result 3, called “[Version 2_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%202%2C%20called%20Version%203_Callibration%202.csv)”
 
 •	Use Code Version 1 and all 58 DROs. 
-o	Result 4, called “[Version 1_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/tree/main/IBSI%20compliance%20calibration%20code)”
+o	Result 4, called “[Version 1_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%203%2C%20called%20Version%202_Callibration%202.csv)”
 
 Calibration 3 ( All 16 Real Patients: Final Validation Phase)
 •	Use Code Version 3 and all 16 real patients (Validation phase). 
-o	Result 5, called “Version 3_Callibration 3.csv”
+o	Result 5, called “[Version 3_Callibration 3.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%204%2C%20called%20Version%201_Callibration%202.csv)”
 
 •	Use Code Version 2 and all 16 real patients (Validation phase). 
 o	Result 6, called “Version 2_Callibration 3.csv”
