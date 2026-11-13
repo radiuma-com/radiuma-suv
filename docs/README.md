@@ -17,7 +17,7 @@ The code provides three main interfaces:
 ## 🔍 Table of Contents
 
 - [🎥 YouTube Tutorials](#-youtube-tutorials)
-- [🧩 IBSI Standardization & Collibration](#-ibsi-standardization)
+- [🧩 IBSI Standardization & Colibration](#-ibsi-standardization)
 - [✨ Key Features](#-key-features)
 - [📚 Library Usage](#-library-usage)
   - [📂 Single File Processing](#-single-file-processing)
@@ -46,7 +46,7 @@ The code provides three main interfaces:
 Coming soon
 
 
-## 🧩 IBSI Standardization & Collibration
+## 🧩 IBSI Standardization & Colibration
 
 We have [three versions of the software/code](https://github.com/radiuma-com/radiuma-suv/tree/main/IBSI-Calibration/IBSI-Validated-Code-Versions) for [IBSI Compliance-SUV Calibrations](https://theibsi.github.io/ibsi-suv/).
 -	[Version 1](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Code-Versions/Version1.ipynb): before the start of IBSI-SUV
