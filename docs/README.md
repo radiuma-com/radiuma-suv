@@ -164,7 +164,7 @@ output, metadata = radiuma-suv_from_input(
 ```python
 from radiuma-suv import radiuma-suv
 
-suv_array, metadata = radiuma-suv(
+suv_array, metadata = radiuma_suv(
     input_array=pet_array,
     input_metadata=pet_metadata,
     parameter_estimation="OFF"
