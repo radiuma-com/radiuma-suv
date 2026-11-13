@@ -1,0 +1,17 @@
+Pseudonym,PatientName,Pitfall,SUVmax_mode,SUVmax_measured,SUVmean_mode,SUVmean_measured,Match,Comment
+Validation_01,ACRIN-FLT-Breast_040,Backcomputed scan start time differs from Series Time,5.64,5.64,4.95,4.95,1,OK
+Validation_02,ACRIN-FLT-Breast_049,Radioph. Start DateTime differs from Radioph. Start Time,7.75,7.75,5.85,5.85,1,OK
+Validation_03,ACRIN-NSCLC-FDG-PET-003,Multiple values of Rescale Slope ,2.86,2.86,1.79,1.79,1,OK
+Validation_04,ACRIN-NSCLC-FDG-PET-020,SUV Type is absent,3.34,3.34,2.8,2.8,1,OK
+Validation_05,ACRIN-NSCLC-FDG-PET-049,Radionuclide Total Dose is in MBq,3.03,3.03,1.87,1.88,1,OK
+Validation_06,ACRIN-NSCLC-FDG-PET-090,Patient’s Weight is absent ,ERROR,ERROR,ERROR,ERROR,1,OK
+Validation_07,ACRIN-NSCLC-FDG-PET-108,Private scan start datetime (GE) differs from Series Time,4.1,4.1,2.54,2.54,1,OK
+Validation_08,ACRIN-NSCLC-FDG-PET-144,Patient’s Weight is zero,ERROR,ERROR,ERROR,ERROR,1,OK
+Validation_09,ACRIN-NSCLC-FDG-PET-157,Scale factors (Philips) are present,1.84,1.83,1.53,1.53,1,OK
+Validation_10,ACRIN-NSCLC-FDG-PET-195,Series Date/Time is equal to Acquisition Date/Time,3.26,3.26,2.1,2.1,1,OK
+Validation_11,ACRIN-NSCLC-FDG-PET-201,Actual Frame Duration is absent,2.35,ERROR,1.84,ERROR,0,"We expected SUV computation would not be possible without Actual Frame Duration, however, most teams (60%) reported the same numerical values instead of an error (40% of teams)."
+Validation_12,ACRIN-NSCLC-FDG-PET-234,Radionuclide Total Dose is absent,ERROR,ERROR,ERROR,ERROR,1,OK
+Validation_13,QIN-BREAST-01-0028,Backcomputed scan start time differs from Series Time,2.48,2.48,1.96,1.96,1,OK
+Validation_14,R01-150,Scale factors are absent,ERROR,ERROR,ERROR,ERROR,1,OK
+Validation_15,STS_048,Backcomputed scan start time differs from Series Time,1.94,1.94,0.84,0.84,1,OK
+Validation_16,TCGA-VP-A87D,Ga68,7.39,7.39,5.74,5.74,1,OK
