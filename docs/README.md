@@ -150,9 +150,9 @@ Import the conversion functions into another Python application, pipeline, or GU
 **Option A: DICOM file or directory**
 
 ```python
-from radiuma-suv import radiuma-suv_from_input
+from radiuma-suv import radiuma_suv_from_input
 
-output, metadata = radiuma-suv_from_input(
+output, metadata = radiuma_suv_from_input(
     image_input="PET_Input",
     parameter_estimation="OFF",
     output_path="SUV_Output"
@@ -162,7 +162,7 @@ output, metadata = radiuma-suv_from_input(
 **Option B: NumPy array with DICOM metadata**
 
 ```python
-from radiuma-suv import radiuma-suv
+from radiuma-suv import radiuma_suv
 
 suv_array, metadata = radiuma_suv(
     input_array=pet_array,
