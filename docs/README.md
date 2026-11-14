@@ -859,7 +859,7 @@ For technical support and maintenance inquiries, please contact:
 
 - **Dr. Mohammad R. Salmanpour (Team Lead, Fund Provider, Evaluator, Medical Imaging Expert, Backend Development, Code Refactoring, Debugging, Library Management, IBSI Standardization, and Activation of the radiuma-suv library)** – [msalman@bccrc.ca](mailto:msalman@bccrc.ca), [m.salmanpoor66@gmail.com](mailto:m.salmanpoor66@gmail.com), [m.salmanpour@ubc.ca](mailto:m.salmanpour@ubc.ca)
 - **Ramin Afrah (Development, Code Refactoring, Debugging, and Library Management)** - [afrah.ramin@gmail.com](mailto:afrah.ramin@gmail.com)
-- **Dr. Mehrdad Oveisi (Evaluator, Software Engineer, and Advisor)** 
+- **Dr. Mehrdad Oveisi (Evaluator and Software Engineer)** 
 - **Dr. Arman Rahmim (Fund Provider, Medical Imaging Expert, Evaluator, and Advisor)** 
 
 ## 📚 Citation
