@@ -159,6 +159,129 @@ output, metadata = radiuma_suv_from_input(
 )
 ```
 
+```python
+from radiuma-suv import radiuma_suv_from_input
+
+output, metadata = radiuma_suv_from_input(
+    image_input="PET_Input",
+    parameter_estimation="ON",
+    output_path="SUV_Output"
+)
+```
+**Note**: If parameter_estimation is set to ON, missing parameter values in the DICOM header are synthesized based on the input image.
+## DICOM and PET Image Parameters
+
+### 1. Patient Information
+
+| Parameter | Default Value | Description |
+|---|---|---|
+| `PatientWeight` | `"75.5"` | Patient weight (kg). |
+| `PatientAge` | `"045Y"` | Patient age (DICOM AS format). |
+| `PatientSize` | `"1.75"` | Patient height (m). |
+| `PatientSex` | `"M"` | Patient sex (DICOM: M/F/O). |
+
+### 2. Radiopharmaceutical Information
+
+| Parameter | Default Value | Description |
+|---|---|---|
+| `RadionuclideTotalDose` | `"370000000"` | Administered radiopharmaceutical dose. Conventional PET: Bq; Enhanced PET: MBq. Must be verified against the source IOD. |
+| `RadionuclideHalfLife` | `"6586.2"` | Radionuclide half-life (s). Must match the actual tracer. |
+| `RadiopharmaceuticalStartTime` | `"093015"` | Administration start time (TM, HHMMSS). Deprecated; full DateTime is preferred. |
+| `RadiopharmaceuticalStartDateTime` | `"20261010093015"` | Administration start date and time (DT). |
+| `RadionuclidePositronFraction` | `"0.967"` | Radionuclide positron fraction (range: 0–1). |
+| `RadiopharmaceuticalSpecificActivity` | `"1000000000"` | Specific activity (Bq/µmol). |
+| `RadiopharmaceuticalVolume` | `"5.0"` | Administered radiopharmaceutical volume (cm³). |
+| `RadiopharmaceuticalStopTime` | `"093115"` | Administration stop time (TM). Deprecated; full DateTime is preferred. |
+| `RadiopharmaceuticalStopDateTime` | `None` | Standard DICOM stop date and time (DT), tag (0018,1079). Use the actual recorded stop datetime. |
+
+### 3. Acquisition and Timing Parameters
+
+| Parameter | Default Value | Description |
+|---|---|---|
+| `ActualFrameDuration` | `"180000"` | Acquisition frame duration (ms). |
+| `FrameReferenceTime` | `"90000"` | Frame reference time (ms). |
+| `AcquisitionDate` | `"20261010"` | Acquisition date (DA, YYYYMMDD). |
+| `AcquisitionTime` | `"100000"` | Acquisition time (TM, HHMMSS). |
+| `SeriesDate` | `"20261010"` | Series date (DA, YYYYMMDD). |
+| `SeriesTime` | `"095500"` | Series time (TM, HHMMSS). |
+| `FrameTime` | `"1000"` | Frame time (ms); conditional on acquisition type. |
+| `TriggerTime` | `"0"` | Trigger time (ms); conditional on acquisition type. |
+| `NominalInterval` | `"800"` | Nominal interval (ms); conditional on gated acquisition. |
+| `IntervalsAcquired` | `"1000"` | Number of intervals acquired; conditional. |
+| `IntervalsRejected` | `"10"` | Number of intervals rejected; conditional. |
+| `NumberOfTimeSlices` | `"1"` | Number of time slices; conditional. |
+| `NumberOfTimeSlots` | `"1"` | Number of time slots; conditional. |
+
+### 4. Pixel Value and SUV Parameters
+
+| Parameter | Default Value | Description |
+|---|---|---|
+| `Units` | `"BQML"` | PET pixel-value units (e.g., BQML, GML, CM2ML, CNTS). |
+| `SUVType` | `"BW"` | SUV normalization type (e.g., BW). |
+| `RescaleSlope` | `"1.0"` | Stored-pixel rescale slope (DS). |
+| `RescaleIntercept` | `"0.0"` | Stored-pixel rescale intercept (DS). |
+| `PhilipsSUVScaleFactor` | `None` | Philips vendor-private SUV scaling factor; not a public DICOM keyword. |
+| `PhilipsActivityConcentrationScaleFactor` | `None` | Philips vendor-private activity concentration scaling factor; not a public DICOM keyword. |
+
+### 5. Decay and Correction Factors
+
+| Parameter | Default Value | Description |
+|---|---|---|
+| `DecayCorrection` | `"START"` | Decay correction reference (START, ADMIN, NONE). |
+| `DecayFactor` | `"1.2"` | Decay factor actually applied. |
+| `DoseCalibrationFactor` | `"1.0"` | Dose calibration factor actually applied. |
+| `SliceSensitivityFactor` | `"1.0"` | Slice sensitivity correction factor actually applied. |
+| `ScatterFractionFactor` | `"0.25"` | Scatter fraction correction factor actually applied. |
+| `DeadTimeFactor` | `"1.05"` | Detector dead-time correction factor actually applied. |
+
+### 6. Count Statistics and Correction Methods
+
+| Parameter | Default Value | Description |
+|---|---|---|
+| `PrimaryPromptsCountsAccumulated` | `"10000000"` | Accumulated primary prompt counts. |
+| `SecondaryCountsAccumulated` | `"1500000"` | Accumulated secondary counts. |
+| `CorrectedImage` | `["ATTN", "SCAT", "DECY", "RAN"]` | Applied image correction codes (DICOM multi-valued CS). |
+| `RandomsCorrectionMethod` | `"DLYD"` | Randoms correction method (e.g., DLYD). |
+| `AttenuationCorrectionMethod` | `"CT-based attenuation correction"` | Attenuation correction method. |
+| `ScatterCorrectionMethod` | `"Model-based scatter correction"` | Scatter correction method. |
+| `ReconstructionMethod` | `"OSEM"` | Image reconstruction method. |
+
+### 7. Image Geometry and Spatial Parameters
+
+| Parameter | Default Value | Description |
+|---|---|---|
+| `Rows` | `256` | Number of image rows. Must match the NumPy array dimensions. |
+| `Columns` | `256` | Number of image columns. Must match the NumPy array dimensions. |
+| `PixelSpacing` | `[4.0, 4.0]` | Pixel spacing in row and column directions (mm). |
+| `SliceThickness` | `"3.0"` | Slice thickness (mm). |
+| `SpacingBetweenSlices` | `"3.0"` | Distance between adjacent slices (mm). |
+| `ImagePositionPatient` | `[0.0, 0.0, 0.0]` | Image position in patient coordinates (x, y, z) in mm. Frame/slice specific. |
+| `ImageOrientationPatient` | `[1.0, 0.0, 0.0, 0.0, 1.0, 0.0]` | Row and column direction cosines (6 values). |
+
+### 8. PET Image and Reconstruction Parameters
+
+| Parameter | Default Value | Description |
+|---|---|---|
+| `SeriesType` | `["STATIC", "IMAGE"]` | PET series type (DICOM multi-valued CS). |
+| `CountsSource` | `"EMISSION"` | PET counts source (EMISSION or TRANSMISSION). |
+| `ReconstructionDiameter` | `"600.0"` | Reconstruction diameter (mm). |
+| `PETFrameCorrectionFactorsSequence` | `None` | Enhanced PET frame correction factors (DICOM SQ). Requires a verified sequence structure. |
+
+### 9. Enhanced PET Correction Parameters
+
+| Parameter | Default Value | Description |
+|---|---|---|
+| `DecayCorrectionDateTime` | `"20261010100000"` | Enhanced PET decay correction reference date and time (DT). |
+| `DecayCorrected` | `"YES"` | Indicates whether decay correction has been applied (YES/NO). |
+| `AttenuationCorrected` | `"YES"` | Indicates whether attenuation correction has been applied (YES/NO). |
+| `ScatterCorrected` | `"YES"` | Indicates whether scatter correction has been applied (YES/NO). |
+| `RandomsCorrected` | `"YES"` | Indicates whether randoms correction has been applied (YES/NO). |
+
+### 10. Application-Specific Parameters
+
+| Parameter | Default Value | Description |
+|---|---|---|
+| `erode_voxels` | `"0"` | Legacy application-specific setting. Not a DICOM attribute. |
 **Option B: NumPy array with DICOM metadata**
 
 ```python
