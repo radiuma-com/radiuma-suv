@@ -21,7 +21,7 @@ The code provides three main interfaces:
 ## 🔍 Table of Contents
 
 - [🎥 YouTube Tutorials](#-youtube-tutorials)
-- [🧩[⬆ Synthetize missing output](#-synthetize-missing-output)
+- [🧩 Synthetize missing output](#-synthetize-missing-output)
 - [✨ Key Features](#-key-features)
 - [📚 Library Usage](#-library-usage)
   - [📂 Single File Processing](#-single-file-processing)
