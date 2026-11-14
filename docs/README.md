@@ -1,8 +1,8 @@
 # radiuma-suv: PET to SUVbw Conversion – Python Script and Library
 
-**PyPi** [Link](https://pypi.org/project/radiuma-suv/)
+**PyPi:**  [Link](https://pypi.org/project/radiuma-suv/)
 
-**GitHub** [Link](https://github.com/radiuma-com/radiuma-suv) 
+**GitHub:**  [Link](https://github.com/radiuma-com/radiuma-suv) 
 
 **radiuma-suv** is the proposed library name for the PET-to-SUVbw conversion engine in `src/radiuma-suv/core.py`. The code converts PET pixels to **body-weight-normalized standardized uptake values (SUVbw)** using DICOM acquisition and radiopharmaceutical metadata. It supports conventional single-frame PET, Enhanced multi-frame PET, NumPy arrays with matching DICOM metadata, and folders containing one or several PET series. In-memory results are floating-point arrays; DICOM results are newly written, calibrated derived images.
 
