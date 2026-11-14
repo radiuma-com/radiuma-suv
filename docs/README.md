@@ -24,11 +24,9 @@ The code provides three main interfaces:
 - [🧩 Synthetize missing output](#-synthetize-missing-output)
 - [✨ Key Features](#-key-features)
 - [📚 Library Usage](#-library-usage)
-
-- [💻 Standalone Mode](#standalone-mode)
-- [🔗 Embedded Mode](#embedded-mode)
-- [🧩 Object-Oriented Integration](#object-oriented-integration)
-  
+    - [💻 Standalone Mode](#standalone-mode)
+    - [🔗 Embedded Mode](#embedded-mode)
+    - [🧩 Object-Oriented Integration](#object-oriented-integration)
 - [📥 Installation](#-installation)
 - [📂 Data Structure Requirements](#-data-structure-requirements)
 - [📋 radiuma-suv Parameters Reference](#-radiuma-suv-parameters-reference)
