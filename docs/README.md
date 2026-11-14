@@ -26,7 +26,6 @@ The code provides three main interfaces:
 - [📚 Library Usage](#-library-usage)
     - [💻 Standalone Mode](#standalone-mode)
     - [🔗 Embedded Mode](#embedded-mode)
-    - [🧩 Object-Oriented Integration](#object-oriented-integration)
 - [📥 Installation](#-installation)
 - [📂 Data Structure Requirements](#-data-structure-requirements)
 - [📋 radiuma-suv Parameters Reference](#-radiuma-suv-parameters-reference)
@@ -282,6 +281,7 @@ output, metadata = radiuma_suv_from_input(
 | Parameter | Default Value | Description |
 |---|---|---|
 | `erode_voxels` | `"0"` | Legacy application-specific setting. Not a DICOM attribute. |
+
 **Option B: NumPy array with DICOM metadata**
 
 ```python
@@ -417,7 +417,7 @@ suv_array, metadata = radiuma_suv(
 |---|---|---|
 | `erode_voxels` | `"0"` | Legacy application-specific setting. Not a DICOM attribute. |
 
-#### Object-Oriented Integration
+**Option B: Object-Oriented Integration** 
 
 ```python
 from radiuma-suv import RadiumaSUVLoader
