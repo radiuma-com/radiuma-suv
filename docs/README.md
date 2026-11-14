@@ -26,7 +26,7 @@ The code provides three main interfaces:
 - [📚 Library Usage](#-library-usage)
   - [📂 Standalone Mode](#-Standalone-Mode)
   - [🧠 Embedded Mode](#-Embedded-Mode)
-  - [📦 Object-oriented integration](#-Object-oriented-integration)
+  - [🧱 Object-oriented integration](#-Object-oriented-integration)
 - [📥 Installation](#-installation)
 - [📂 Data Structure Requirements](#-data-structure-requirements)
 - [📋 radiuma-suv Parameters Reference](#-radiuma-suv-parameters-reference)
@@ -417,7 +417,7 @@ suv_array, metadata = radiuma_suv(
 |---|---|---|
 | `erode_voxels` | `"0"` | Legacy application-specific setting. Not a DICOM attribute. |
 
-####**Option C: Object-oriented integration**
+####🧱 3. Object-oriented integration**
 
 ```python
 from radiuma-suv import RadiumaSUVLoader
