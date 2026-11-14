@@ -709,11 +709,11 @@ The source defines many additional correction, geometry, timing, and vendor-rela
 
 ## 📚 API Reference
 
-### `radiuma-suv(input_array, input_metadata, parameter_estimation="OFF")`
+### `radiuma_suv(input_array, input_metadata, parameter_estimation="OFF")`
 
 Converts an in-memory PET NumPy array to SUVbw. Returns `(suv_array, output_metadata)`.
 
-### `radiuma-suv(input_array, input_metadata, parameter_estimation="ON")` 
+### `radiuma_suv(input_array, input_metadata, parameter_estimation="ON")` 
 
 Converts an in-memory PET NumPy array to SUVbw, it replace missed parameters in input image DICOM header with default vlues defined in code. Returns `(suv_array, output_metadata)`.
 
