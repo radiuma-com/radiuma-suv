@@ -35,7 +35,6 @@ The code provides three main interfaces:
 - [📁 Supported File Formats](#-supported-file-formats)
 - [🎯 Library Examples](#-library-examples)
 - [⚡ Performance Tips](#-performance-tips)
-- [💻 Integration of radiuma-suv to GUI](#-integration-of-radiuma-suv-to-gui)
 - [❓ Troubleshooting](#-troubleshooting)
 - [🕒 Version History](#-version-history)
 - [📬 Contact](#-contact)
