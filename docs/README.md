@@ -24,9 +24,9 @@ The code provides three main interfaces:
 - [🧩 Synthetize missing output](#-synthetize-missing-output)
 - [✨ Key Features](#-key-features)
 - [📚 Library Usage](#-library-usage)
-  - [📂 Single File Processing](#-single-file-processing)
-  - [🧠 In-Memory Array Processing](#-in-memory-array-processing)
-  - [🔧 Advanced Configuration](#-advanced-configuration)
+  - [📂 Standalone Mode](#-Standalone-Mode)
+  - [🧠 Embedded Mode](#-Embedded-Mode)
+  - [📦 Object-oriented integration](#-Object-oriented-integration)
 - [📥 Installation](#-installation)
 - [📂 Data Structure Requirements](#-data-structure-requirements)
 - [📋 radiuma-suv Parameters Reference](#-radiuma-suv-parameters-reference)
@@ -417,7 +417,7 @@ suv_array, metadata = radiuma_suv(
 |---|---|---|
 | `erode_voxels` | `"0"` | Legacy application-specific setting. Not a DICOM attribute. |
 
-**Option C: Object-oriented integration**
+####**Option C: Object-oriented integration**
 
 ```python
 from radiuma-suv import RadiumaSUVLoader
