@@ -21,7 +21,7 @@ The code provides three main interfaces:
 ## 🔍 Table of Contents
 
 - [🎥 YouTube Tutorials](#-youtube-tutorials)
-- [🧩 IBSI Standardization & Colibration](#-IBSI-Standardization-&-Colibration)
+- [🧩 ([⬆ Synthetize missing output](#-synthetize-missing-output))
 - [✨ Key Features](#-key-features)
 - [📚 Library Usage](#-library-usage)
   - [📂 Single File Processing](#-single-file-processing)
@@ -51,7 +51,7 @@ Watch our tutorial videos on our [YouTube channel](https://www.youtube.com/@Radi
 - Video 1 (coming soon)
 
 
-## 🧩 IBSI Standardization & Colibration
+## 🧩 Synthetize missing output
 
 We have [three versions of the software/code](https://github.com/radiuma-com/radiuma-suv/tree/main/IBSI-Calibration/IBSI-Validated-Code-Versions) for [IBSI Compliance-SUV Calibrations](https://theibsi.github.io/ibsi-suv/).
 -	[Version 1](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Code-Versions/Version1.ipynb): before the start of IBSI-SUV
