@@ -125,7 +125,7 @@ python -m pip install -e .
 
 The `radiuma-suv` code supports two execution modes: **Standalone Mode** and **Embedded Mode**.
 
-#### 💻 1. Standalone Mode
+#### Standalone Mode
 
 Run the Python script directly to convert PET DICOM images into SUVbw.
 
@@ -143,7 +143,7 @@ python -m radiuma-suv PATH_TO_PET_DICOM_FILE_OR_FOLDER --parameter-estimation OF
 
 **Output:** Creates calibrated SUVbw DICOM files in a new `_processed` location without overwriting original images.
 
-#### 🔗 2. Embedded Mode
+#### Embedded Mode
 
 Import the conversion functions into another Python application, pipeline, or GUI.
 
@@ -417,7 +417,7 @@ suv_array, metadata = radiuma_suv(
 |---|---|---|
 | `erode_voxels` | `"0"` | Legacy application-specific setting. Not a DICOM attribute. |
 
-#### 🧱 3. Object-oriented integration
+#### Object-Oriented Integration
 
 ```python
 from radiuma-suv import RadiumaSUVLoader
