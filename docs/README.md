@@ -71,17 +71,17 @@ Report of Calibrations
 **Calibration 2 (All 58 DROs)**
 
 - Use Code Version 3 and all 58 DROs. 
-  - [Result 2, called Version 3_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%201%2C%20called%20Version%202_Callibration%201.csv)”
+  - [Result 2, called Version 3_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%201%2C%20called%20Version%202_Callibration%201.csv)
 
  - Use Code Version 2 and all 58 DROs. 
-   - [Result 3, called Version 2_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%202%2C%20called%20Version%203_Callibration%202.csv)”
+   - [Result 3, called Version 2_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%202%2C%20called%20Version%203_Callibration%202.csv)
 
  - Use Code Version 1 and all 58 DROs. 
-   - [Result 4, called Version 1_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%203%2C%20called%20Version%202_Callibration%202.csv)”
+   - [Result 4, called Version 1_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%203%2C%20called%20Version%202_Callibration%202.csv)
 
 **Calibration 3 ( All 16 Real Patients: Final Validation Phase)**
  - Use Code Version 3 and all 16 real patients (Validation phase). 
-   - [Result 5, called Version 3_Callibration 3.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%204%2C%20called%20Version%201_Callibration%202.csv)”
+   - [Result 5, called Version 3_Callibration 3.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%204%2C%20called%20Version%201_Callibration%202.csv)
 
  - Use Code Version 2 and all 16 real patients (Validation phase). 
    - [Result 6, called “Version 2_Callibration 3.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%206%2C%20called%20Version%202_Callibration%203.csv)
