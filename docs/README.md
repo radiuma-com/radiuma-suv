@@ -724,11 +724,6 @@ Detects input representation and returns a matching result: a NumPy array or a n
 ### `radiuma_suv_from_input(image_input, parameter_estimation="ON", output_path=None)`
 Detects input representation and returns a matching result: a new DICOM output file/folder path, it replace missed parameters in input image DICOM header with default vlues defined in code. DICOM source objects are not deliberately overwritten.
 
-```python
-from radiuma-suv import RadiumaSUVLoader
-converter = RadiumaSUVLoader(parameter_estimation="OFF", output_path="pet_output.dcm")
-output, metadata = converter.convert("pet_input.dcm")
-```
 
 ## 📊 Output Structure
 
