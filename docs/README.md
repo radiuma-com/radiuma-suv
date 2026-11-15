@@ -1,17 +1,17 @@
-# radiuma-suv: PET to SUVbw Conversion – Python Script and Library
+# radiuma_suv: PET to SUVbw Conversion – Python Script and Library
 
-**PyPi:**  [Link](https://pypi.org/project/radiuma-suv/)
+**PyPi:**  [Link](https://pypi.org/project/radiuma_suv/)
 
-**GitHub:**  [Link](https://github.com/radiuma-com/radiuma-suv) 
+**GitHub:**  [Link](https://github.com/radiuma-com/radiuma_suv) 
 
-**radiuma-suv** is the proposed library name for the PET-to-SUVbw conversion engine in `src/radiuma-suv/core.py`. The code converts PET pixels to **body-weight-normalized standardized uptake values (SUVbw)** using DICOM acquisition and radiopharmaceutical metadata. It supports conventional single-frame PET, Enhanced multi-frame PET, NumPy arrays with matching DICOM metadata, and folders containing one or several PET series. In-memory results are floating-point arrays; DICOM results are newly written, calibrated derived images.
+**radiuma_suv** is the proposed library name for the PET-to-SUVbw conversion engine in `src/radiuma_suv/core.py`. The code converts PET pixels to **body-weight-normalized standardized uptake values (SUVbw)** using DICOM acquisition and radiopharmaceutical metadata. It supports conventional single-frame PET, Enhanced multi-frame PET, NumPy arrays with matching DICOM metadata, and folders containing one or several PET series. In-memory results are floating-point arrays; DICOM results are newly written, calibrated derived images.
 
-**Code Overview:** `radiuma-suv` is a Python-based PET-to-SUVbw conversion tool that converts PET image pixel values into body-weight-normalized Standardized Uptake Values (SUVbw) using DICOM metadata. It supports conventional single-frame PET, Enhanced multi-frame PET, NumPy arrays, and DICOM directories containing multiple PET series.
+**Code Overview:** `radiuma_suv` is a Python-based PET-to-SUVbw conversion tool that converts PET image pixel values into body-weight-normalized Standardized Uptake Values (SUVbw) using DICOM metadata. It supports conventional single-frame PET, Enhanced multi-frame PET, NumPy arrays, and DICOM directories containing multiple PET series.
 
 The code provides three main interfaces:
 
-- **`radiuma-suv(input_array, input_metadata, parameter_estimation="OFF")`**: Converts a 2D/3D PET NumPy array into a floating-point SUVbw array and returns the corresponding metadata dictionary.
-- **`radiuma-suv_from_input(image_input, parameter_estimation="OFF", output_path=None)`**: Automatically detects supported PET inputs and produces SUVbw outputs in the corresponding format (NumPy array or derived DICOM file/directory).
+- **`radiuma_suv(input_array, input_metadata, parameter_estimation="OFF")`**: Converts a 2D/3D PET NumPy array into a floating-point SUVbw array and returns the corresponding metadata dictionary.
+- **`radiuma_suv_from_input(image_input, parameter_estimation="OFF", output_path=None)`**: Automatically detects supported PET inputs and produces SUVbw outputs in the corresponding format (NumPy array or derived DICOM file/directory).
 - **`RadiumaSUVLoader(parameter_estimation="OFF", pet_metadata=None, output_path=None)`**: Provides an object-oriented interface for PET-to-SUVbw conversion through the `.convert(image_input)` method.
 
 **Parameter Estimation:** `"OFF"` uses existing DICOM metadata without filling missing fields, while `"ON"` fills eligible missing metadata using predefined configuration values. Original DICOM files are not overwritten.
@@ -51,10 +51,10 @@ Watch our tutorial videos on our [YouTube channel](https://www.youtube.com/@Radi
 
 ## 🧩 IBSI Standardization & Calibration
 
-We have [three versions of the software/code](https://github.com/radiuma-com/radiuma-suv/tree/main/IBSI-Calibration/IBSI-Validated-Code-Versions) for [IBSI Compliance-SUV Calibrations](https://theibsi.github.io/ibsi-suv/).
--	[Version 1](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Code-Versions/Version1.ipynb): before the start of IBSI-SUV
--	[Version 2](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Code-Versions/Version2.ipynb): Calibrated with the first standardization attempt and with the first 17 DROs.  
--	[Version 3](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Code-Versions/Version3.ipynb): Calibrated with the second standardization attempt and with all 58 DROs.
+We have [three versions of the software/code](https://github.com/radiuma-com/radiuma_suv/tree/main/IBSI-Calibration/IBSI-Validated-Code-Versions) for [IBSI Compliance-SUV Calibrations](https://theibsi.github.io/ibsi-suv/).
+-	[Version 1](https://github.com/radiuma-com/radiuma_suv/blob/main/IBSI-Calibration/IBSI-Validated-Code-Versions/Version1.ipynb): before the start of IBSI-SUV
+-	[Version 2](https://github.com/radiuma-com/radiuma_suv/blob/main/IBSI-Calibration/IBSI-Validated-Code-Versions/Version2.ipynb): Calibrated with the first standardization attempt and with the first 17 DROs.  
+-	[Version 3](https://github.com/radiuma-com/radiuma_suv/blob/main/IBSI-Calibration/IBSI-Validated-Code-Versions/Version3.ipynb): Calibrated with the second standardization attempt and with all 58 DROs.
 IBSI calibration datasets are available for [download](https://github.com/oncoray/suv_computation)
 
 Report of Calibrations
@@ -62,30 +62,30 @@ Report of Calibrations
 **Calibration 1 (Just the First 17 DROs)**
 
 - Use Code Version 2 and the first 17 DROs.
-  - [Result 1, called Version 2_Calibration 1.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%201%2C%20called%20Version%202_Callibration%201.csv)
+  - [Result 1, called Version 2_Calibration 1.csv](https://github.com/radiuma-com/radiuma_suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%201%2C%20called%20Version%202_Callibration%201.csv)
     - **Note:** We already submitted this result, but we include it in this collection for your easy access.
           
 
 **Calibration 2 (All 58 DROs)**
 
 - Use Code Version 3 and all 58 DROs. 
-  - [Result 2, called Version 3_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%201%2C%20called%20Version%202_Callibration%201.csv)
+  - [Result 2, called Version 3_Callibration 2.csv](https://github.com/radiuma-com/radiuma_suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%201%2C%20called%20Version%202_Callibration%201.csv)
 
  - Use Code Version 2 and all 58 DROs. 
-   - [Result 3, called Version 2_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%202%2C%20called%20Version%203_Callibration%202.csv)
+   - [Result 3, called Version 2_Callibration 2.csv](https://github.com/radiuma-com/radiuma_suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%202%2C%20called%20Version%203_Callibration%202.csv)
 
  - Use Code Version 1 and all 58 DROs. 
-   - [Result 4, called Version 1_Callibration 2.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%203%2C%20called%20Version%202_Callibration%202.csv)
+   - [Result 4, called Version 1_Callibration 2.csv](https://github.com/radiuma-com/radiuma_suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%203%2C%20called%20Version%202_Callibration%202.csv)
 
 **Calibration 3 ( All 16 Real Patients: Final Validation Phase)**
  - Use Code Version 3 and all 16 real patients (Validation phase). 
-   - [Result 5, called Version 3_Callibration 3.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%204%2C%20called%20Version%201_Callibration%202.csv)
+   - [Result 5, called Version 3_Callibration 3.csv](https://github.com/radiuma-com/radiuma_suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%204%2C%20called%20Version%201_Callibration%202.csv)
 
  - Use Code Version 2 and all 16 real patients (Validation phase). 
-   - [Result 6, called “Version 2_Callibration 3.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%206%2C%20called%20Version%202_Callibration%203.csv)
+   - [Result 6, called “Version 2_Callibration 3.csv](https://github.com/radiuma-com/radiuma_suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%206%2C%20called%20Version%202_Callibration%203.csv)
 
  - Use Code Version 1 and all 16 real patients (Validation phase). 
-   - [Result 7, called “Version 1_Callibration 3.csv](https://github.com/radiuma-com/radiuma-suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%207%2C%20called%20Version%201_Callibration%203.csv)
+   - [Result 7, called “Version 1_Callibration 3.csv](https://github.com/radiuma-com/radiuma_suv/blob/main/IBSI-Calibration/IBSI-Validated-Results/Result%207%2C%20called%20Version%201_Callibration%203.csv)
 
 
 ## ✨ Key Features
@@ -105,10 +105,10 @@ These are implementation capabilities, not independent quantitative or clinical 
 
 ### 📦 Library Installation via pip
 
-After publishing the intended package under the distribution name `radiuma-suv`:
+After publishing the intended package under the distribution name `radiuma_suv`:
 
 ```bash
-python -m pip install radiuma-suv
+python -m pip install radiuma_suv
 ```
 
 For local development in the directory containing `pyproject.toml`:
@@ -121,7 +121,7 @@ python -m pip install -e .
 
 ### Script Execution
 
-The `radiuma-suv` code supports two execution modes: **Standalone Mode** and **Embedded Mode**.
+The `radiuma_suv` code supports two execution modes: **Standalone Mode** and **Embedded Mode**.
 
 #### Standalone Mode
 
@@ -130,13 +130,13 @@ Run the Python script directly to convert PET DICOM images into SUVbw.
 **Step 1: Choose the input path and options at the CLI (do not edit the installed library):**
 
 ```bash
-radiuma-suv PATH_TO_PET_DICOM_FILE_OR_FOLDER --parameter-estimation OFF
+radiuma_suv PATH_TO_PET_DICOM_FILE_OR_FOLDER --parameter-estimation OFF
 ```
 
 **Step 2: Alternatively execute using Python:**
 
 ```bash
-python -m radiuma-suv PATH_TO_PET_DICOM_FILE_OR_FOLDER --parameter-estimation OFF
+python -m radiuma_suv PATH_TO_PET_DICOM_FILE_OR_FOLDER --parameter-estimation OFF
 ```
 
 **Output:** Creates calibrated SUVbw DICOM files in a new `_processed` location without overwriting original images.
@@ -148,7 +148,7 @@ Import the conversion functions into another Python application, pipeline, or GU
 **Option A: DICOM file or directory**
 
 ```python
-from radiuma-suv import radiuma_suv_from_input
+from radiuma_suv import radiuma_suv_from_input
 
 output, metadata = radiuma_suv_from_input(
     image_input="PET_Input",
@@ -158,7 +158,7 @@ output, metadata = radiuma_suv_from_input(
 ```
 
 ```python
-from radiuma-suv import radiuma_suv_from_input
+from radiuma_suv import radiuma_suv_from_input
 
 output, metadata = radiuma_suv_from_input(
     image_input="PET_Input",
@@ -284,7 +284,7 @@ output, metadata = radiuma_suv_from_input(
 **Option B: NumPy array with DICOM metadata**
 
 ```python
-from radiuma-suv import radiuma_suv
+from radiuma_suv import radiuma_suv
 
 suv_array, metadata = radiuma_suv(
     input_array=pet_array,
@@ -293,7 +293,7 @@ suv_array, metadata = radiuma_suv(
 )
 ```
 ```python
-from radiuma-suv import radiuma_suv
+from radiuma_suv import radiuma_suv
 
 suv_array, metadata = radiuma_suv(
     input_array=pet_array,
@@ -419,13 +419,13 @@ suv_array, metadata = radiuma_suv(
 **Option B: Object-Oriented Integration** 
 
 ```python
-from radiuma-suv import RadiumaSUVLoader
+from radiuma_suv import RadiumaSUVLoader
 
 converter = RadiumaSUVLoader(parameter_estimation="OFF")
 output, metadata = converter.convert("PET_Input")
 ```
 ```python
-from radiuma-suv import RadiumaSUVLoader
+from radiuma_suv import RadiumaSUVLoader
 
 converter = RadiumaSUVLoader(parameter_estimation="ON")
 output, metadata = converter.convert("PET_Input")
@@ -565,11 +565,11 @@ Dependencies imported by the notebook are `numpy`, `pydicom`, and `SimpleITK`; o
 
 ### 🌐 GitHub Installation
 
-https://git.talkfluent.ir/admin/radiuma-suv/src/branch/main
+https://git.talkfluent.ir/admin/radiuma_suv/src/branch/main
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/radiuma-suv.git
-cd radiuma-suv
+git clone https://github.com/YOUR_USERNAME/radiuma_suv.git
+cd radiuma_suv
 python -m pip install -e .
 ```
 
@@ -595,11 +595,11 @@ python -m pip install -e .
 
 ### 💻 Python Script - Command Line Interface (CLI)
 
-The notebook contains an example `if __name__ == "__main__":` block but **does not implement an argument-parsing CLI or a `radiuma-suv` terminal command**. Create a short Python script when you want command-line execution:
+The notebook contains an example `if __name__ == "__main__":` block but **does not implement an argument-parsing CLI or a `radiuma_suv` terminal command**. Create a short Python script when you want command-line execution:
 
 ```python
 # convert_pet.py
-from radiuma-suv import radiuma_suv_from_input
+from radiuma_suv import radiuma_suv_from_input
 path, headers = radiuma_suv_from_input("pet_scan.dcm", parameter_estimation="OFF")
 print(path)
 ```
@@ -611,7 +611,7 @@ python convert_pet.py
 ### 📦 Library Installation via pip
 
 ```bash
-python -m pip install radiuma-suv
+python -m pip install radiuma_suv
 ```
 
 This will install the intended project **only after it is actually published** under that name on PyPI.
@@ -651,7 +651,7 @@ Patients/
 
 The source searches directories recursively, reads DICOM headers, selects `Modality=PT`, and groups series by their `SeriesInstanceUID` and folder. A DICOM series spanning different source folders is rejected by the writer. The corresponding output folders preserve relative structure with `_processed` naming.
 
-**Output must not be inside the source directory.** Existing destinations are not overwritten. Non-DICOM files may be skipped during directory discovery, but `.nii`, `.nii.gz`, `.nrrd`, and `.nhdr` are not valid radiuma-suv PET inputs. For NumPy, pass an in-memory `ndarray` and DICOM metadata; a `.npy` *path* is not accepted by `radiuma_suv_from_input`.
+**Output must not be inside the source directory.** Existing destinations are not overwritten. Non-DICOM files may be skipped during directory discovery, but `.nii`, `.nii.gz`, `.nrrd`, and `.nhdr` are not valid radiuma_suv PET inputs. For NumPy, pass an in-memory `ndarray` and DICOM metadata; a `.npy` *path* is not accepted by `radiuma_suv_from_input`.
 
 ## 📋 Synthesize Missing Inputs
 
@@ -659,7 +659,7 @@ The source searches directories recursively, reads DICOM headers, selects `Modal
 
 | Parameter | Type | Default | Description |
 |---|---|---|---|
-| `input_array` | `numpy.ndarray` | Required | PET array passed to `radiuma-suv`. |
+| `input_array` | `numpy.ndarray` | Required | PET array passed to `radiuma_suv`. |
 | `input_metadata` | `dict` | Required | Corresponding PET DICOM metadata dictionary. |
 | `image_input` | `numpy.ndarray`, string, path-like | Required | NumPy array, PET DICOM file, or PET DICOM directory. |
 | `parameter_estimation` | `str` | `"OFF"` | `"ON"` or `"OFF"` only. |
@@ -751,12 +751,12 @@ Detects input representation and returns a matching result: a new DICOM output f
 ### Example 1: Single DICOM
 
 ```python
-from radiuma-suv import radiuma_suv_from_input
+from radiuma_suv import radiuma_suv_from_input
 result, meta = radiuma_suv_from_input("pet.dcm", parameter_estimation="OFF")
 print(result)
 ```
 ```python
-from radiuma-suv import radiuma_suv_from_input
+from radiuma_suv import radiuma_suv_from_input
 result, meta = radiuma_suv_from_input("pet.dcm", parameter_estimation="ON")
 print(result)
 ```
@@ -764,13 +764,13 @@ print(result)
 ### Example 2: Multiple PET folders
 
 ```python
-from radiuma-suv import radiuma_suv_from_input
+from radiuma_suv import radiuma_suv_from_input
 out, headers = radiuma_suv_from_input(
     "PET_Input", parameter_estimation="OFF", output_path="SUV_Output"
 )
 ```
 ```python
-from radiuma-suv import radiuma_suv_from_input
+from radiuma_suv import radiuma_suv_from_input
 out, headers = radiuma_suv_from_input(
     "PET_Input", parameter_estimation="ON", output_path="SUV_Output"
 )
@@ -780,14 +780,14 @@ out, headers = radiuma_suv_from_input(
 
 ```python
 import numpy as np
-from radiuma-suv import radiuma_suv
+from radiuma_suv import radiuma_suv
 pixels = np.load("pet_pixels.npy")
 # Load the genuine DICOM metadata for the same scan.
 suv, meta = radiuma_suv(pixels, matching_pet_dicom_metadata, "OFF")
 ```
 ```python
 import numpy as np
-from radiuma-suv import radiuma_suv
+from radiuma_suv import radiuma_suv
 pixels = np.load("pet_pixels.npy")
 # Load the genuine DICOM metadata for the same scan.
 suv, meta = radiuma_suv(pixels, matching_pet_dicom_metadata, "ON")
@@ -807,7 +807,7 @@ suv, meta = radiuma_suv(pixels, matching_pet_dicom_metadata, "ON")
 
 | Message / problem | Recommended check |
 |---|---|
-| `ModuleNotFoundError: No module named 'radiuma-suv'` | Confirm the package was created, installed, and imported from the active Python environment. |
+| `ModuleNotFoundError: No module named 'radiuma_suv'` | Confirm the package was created, installed, and imported from the active Python environment. |
 | `parameter_estimation must be "ON" or "OFF"` | Use the exact supported values. |
 | `Input must be PET DICOM (Modality=PT)` | Confirm the file really contains PET DICOM. |
 | `Non-Enhanced multi-frame PET is unsupported` | Input format is outside the implemented multi-frame path. |
@@ -822,7 +822,7 @@ suv, meta = radiuma_suv(pixels, matching_pet_dicom_metadata, "ON")
 - **Documentation:** Refer to this README for installation, configuration, supported formats, and usage examples.
 - **Execution:** See the **Script Execution** section for standalone and embedded usage.
 - **Troubleshooting:** Check the **Troubleshooting** section for common errors and solutions.
-- **Issues and Bug Reports:** [GitHub Issues](https://github.com/radiuma-com/radiuma-suv/issues).
+- **Issues and Bug Reports:** [GitHub Issues](https://github.com/radiuma-com/radiuma_suv/issues).
 - **Technical Support:** Contact the development team using the details in the **Contact** or **Maintenance** section. 
 
 ## 🕒 Version History
@@ -838,7 +838,7 @@ v1.0.1
 
 ## 📬 Contact
 
-radiuma-suv is available **free of charge**.
+radiuma_suv is available **free of charge**.
 For access, questions, or feedback:
 
 **Dr. Mohammad R. Salmanpour (Team Lead)**  
@@ -856,7 +856,7 @@ For technical support and maintenance inquiries, please contact:
  afrah.ramin@gmail.com
 ## 👥 Authors
 
-- **Dr. Mohammad R. Salmanpour (Team Lead, Fund Provider, Evaluator, Medical Imaging Expert, Backend Development, Code Refactoring, Debugging, Library Management, IBSI Standardization, and Activation of the radiuma-suv library)** – [msalman@bccrc.ca](mailto:msalman@bccrc.ca), [m.salmanpoor66@gmail.com](mailto:m.salmanpoor66@gmail.com), [m.salmanpour@ubc.ca](mailto:m.salmanpour@ubc.ca)
+- **Dr. Mohammad R. Salmanpour (Team Lead, Fund Provider, Evaluator, Medical Imaging Expert, Backend Development, Code Refactoring, Debugging, Library Management, IBSI Standardization, and Activation of the radiuma_suv library)** – [msalman@bccrc.ca](mailto:msalman@bccrc.ca), [m.salmanpoor66@gmail.com](mailto:m.salmanpoor66@gmail.com), [m.salmanpour@ubc.ca](mailto:m.salmanpour@ubc.ca)
 - **Ramin Afrah (Development, Code Refactoring, Debugging, and Library Management)** - [afrah.ramin@gmail.com](mailto:afrah.ramin@gmail.com)
 - **Dr. Mehrdad Oveisi (Evaluator and Software Engineer)** 
 - **Dr. Arman Rahmim (Fund Provider, Medical Imaging Expert, Evaluator, and Advisor)** 
@@ -875,7 +875,7 @@ This open-source software is released under the **MIT License**, which grants pe
 ## Support
 
 
-- **Issues**: [GitHub Issues](https://github.com/radiuma-com/radiuma-suv/issues)
+- **Issues**: [GitHub Issues](https://github.com/radiuma-com/radiuma_suv/issues)
 - **Documentation**: This README and the included guides
 - **Examples**: See `examples/basic_usage.py`
 
