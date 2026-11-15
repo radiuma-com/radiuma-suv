@@ -759,6 +759,7 @@ print(result)
 ```python
 from radiuma_suv import radiuma_suv_from_input
 result, meta = radiuma_suv_from_input("pet.dcm", parameter_estimation="ON")
+
 PatientWeight = "75.5"  # Patient weight (kg); patient-specific  # Changing is not Recommended
 PatientAge = "045Y"  # Age (DICOM AS format); patient-specific
 PatientSize = "1.75"  # Height (m); patient-specific  # Changing is not Recommended
@@ -836,7 +837,8 @@ out, headers = radiuma_suv_from_input(
 from radiuma_suv import radiuma_suv_from_input
 out, headers = radiuma_suv_from_input(
     "PET_Input", parameter_estimation="ON", output_path="SUV_Output"
-)PatientWeight = "75.5"  # Patient weight (kg); patient-specific  # Changing is not Recommended
+)
+PatientWeight = "75.5"  # Patient weight (kg); patient-specific  # Changing is not Recommended
 PatientAge = "045Y"  # Age (DICOM AS format); patient-specific
 PatientSize = "1.75"  # Height (m); patient-specific  # Changing is not Recommended
 PatientSex = "M"  # DICOM M/F/O; patient-specific  # Changing is not Recommended
