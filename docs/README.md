@@ -28,7 +28,7 @@ The code provides three main interfaces:
     - [🔗 Embedded Mode](#embedded-mode)
 - [📥 Installation](#-installation)
 - [📂 Data Structure Requirements](#-data-structure-requirements)
-- [📋 Synthesize Missing Inputs](#-radiuma-suv-parameters-reference)
+- [📋 Synthesize Missing Inputs](#-synthesize-missing-inputs)
 - [📊 Parameter Compatibility](#-parameter-compatibility)
 - [📚 API Reference](#-api-reference)
 - [📊 Output Structure](#-output-structure)
