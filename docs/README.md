@@ -28,7 +28,7 @@ The code provides three main interfaces:
     - [🔗 Embedded Mode](#embedded-mode)
 - [📥 Installation](#-installation)
 - [📂 Data Structure Requirements](#-data-structure-requirements)
-- [📋 synthesize_missing_inputs](#-radiuma-suv-parameters-reference)
+- [📋 Synthesize Missing Inputs](#-radiuma-suv-parameters-reference)
 - [📊 Parameter Compatibility](#-parameter-compatibility)
 - [📚 API Reference](#-api-reference)
 - [📊 Output Structure](#-output-structure)
@@ -653,7 +653,7 @@ The source searches directories recursively, reads DICOM headers, selects `Modal
 
 **Output must not be inside the source directory.** Existing destinations are not overwritten. Non-DICOM files may be skipped during directory discovery, but `.nii`, `.nii.gz`, `.nrrd`, and `.nhdr` are not valid radiuma-suv PET inputs. For NumPy, pass an in-memory `ndarray` and DICOM metadata; a `.npy` *path* is not accepted by `radiuma_suv_from_input`.
 
-## 📋 synthesize_missing_inputs
+## 📋 Synthesize Missing Inputs
 
 ### Public function parameters
 
