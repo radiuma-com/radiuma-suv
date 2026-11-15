@@ -753,11 +753,74 @@ Detects input representation and returns a matching result: a new DICOM output f
 ```python
 from radiuma_suv import radiuma_suv_from_input
 result, meta = radiuma_suv_from_input("pet.dcm", parameter_estimation="OFF")
+
 print(result)
 ```
 ```python
 from radiuma_suv import radiuma_suv_from_input
 result, meta = radiuma_suv_from_input("pet.dcm", parameter_estimation="ON")
+PatientWeight = "75.5"  # Patient weight (kg); patient-specific  # Changing is not Recommended
+PatientAge = "045Y"  # Age (DICOM AS format); patient-specific
+PatientSize = "1.75"  # Height (m); patient-specific  # Changing is not Recommended
+PatientSex = "M"  # DICOM M/F/O; patient-specific  # Changing is not Recommended
+RadionuclideTotalDose = "370000000"  # Administered dose; conventional PET Bq, Enhanced PET MBq; must be verified against source IOD  # Changing is not Recommended
+RadionuclideHalfLife = "6586.2"  # Radionuclide half-life (s); must match actual tracer  # Changing is not Recommended
+RadiopharmaceuticalStartTime = "093015"  # Administration start time (TM, HHMMSS); deprecated, prefer full DateTime  # Changing is not Recommended
+RadiopharmaceuticalStartDateTime = "20261010093015"  # Administration start datetime (DT)  # Changing is not Recommended
+RadionuclidePositronFraction = "0.967"  # Radionuclide positron fraction [0,1]
+RadiopharmaceuticalSpecificActivity = "1000000000"  # Specific activity in Bq/micromole
+RadiopharmaceuticalVolume = "5.0"  # Administered radiopharmaceutical volume (cm^3)
+RadiopharmaceuticalStopTime = "093115"  # Administration stop time (TM); deprecated, prefer full DateTime
+RadiopharmaceuticalStopDateTime = None  # Standard DICOM DT (0018,1079); use actual recorded stop datetime
+ActualFrameDuration = "180000"  # Acquisition-frame duration (ms)  # Changing is not Recommended
+FrameReferenceTime = "90000"  # Frame reference time (ms)  # Changing is not Recommended
+AcquisitionDate = "20261010"  # Acquisition date (DA YYYYMMDD)  # Changing is not Recommended
+AcquisitionTime = "100000"  # Acquisition time (TM HHMMSS)  # Changing is not Recommended
+SeriesDate = "20261010"  # Series date (DA YYYYMMDD)  # Changing is not Recommended
+SeriesTime = "095500"  # Series time (TM HHMMSS)  # Changing is not Recommended
+FrameTime = "1000"  # Frame time (ms); conditional on acquisition type
+TriggerTime = "0"  # Trigger time (ms); conditional on acquisition type
+NominalInterval = "800"  # Nominal interval (ms); conditional on gated acquisition
+IntervalsAcquired = "1000"  # Count of intervals acquired; conditional
+IntervalsRejected = "10"  # Count of intervals rejected; conditional
+NumberOfTimeSlices = "1"  # Number of time slices; conditional
+NumberOfTimeSlots = "1"  # Number of time slots; conditional
+Units = "BQML"  # PET pixel-value units (e.g. BQML, GML, CM2ML, CNTS)  # Changing is not Recommended
+SUVType = "BW"  # SUV normalization type (e.g. BW)  # Changing is not Recommended
+RescaleSlope = "1.0"  # Stored-pixel rescale slope (DS)  # Changing is not Recommended
+RescaleIntercept = "0.0"  # Stored-pixel rescale intercept (DS)  # Changing is not Recommended
+PhilipsSUVScaleFactor = None  # Philips vendor-private factor; not a public DICOM keyword  # Changing is not Recommended
+PhilipsActivityConcentrationScaleFactor = None  # Philips vendor-private activity scaling; not a public DICOM keyword  # Changing is not Recommended
+DecayCorrection = "START"  # Decay correction reference (START, ADMIN, NONE)  # Changing is not Recommended
+DecayFactor = "1.2"  # Decay factor actually applied
+DoseCalibrationFactor = "1.0"  # Dose calibration factor actually applied
+SliceSensitivityFactor = "1.0"  # Slice sensitivity correction factor actually applied
+ScatterFractionFactor = "0.25"  # Scatter fraction correction factor actually applied
+DeadTimeFactor = "1.05"  # Detector dead-time factor actually applied
+PrimaryPromptsCountsAccumulated = "10000000"  # Primary accumulated prompt counts
+SecondaryCountsAccumulated = "1500000"  # Secondary accumulated counts
+CorrectedImage = ["ATTN", "SCAT", "DECY", "RAN"]  # Applied correction codes (DICOM multi-valued CS)
+RandomsCorrectionMethod = "DLYD"  # Randoms correction method (e.g. DLYD)
+AttenuationCorrectionMethod = "CT-based attenuation correction"  # Attenuation correction method (descriptive text)
+ScatterCorrectionMethod = "Model-based scatter correction"  # Scatter correction method (descriptive text)
+ReconstructionMethod = "OSEM"  # Reconstruction method (descriptive text)
+Rows = 256  # Image rows (US integer); must match NumPy array
+Columns = 256  # Image columns (US integer); must match NumPy array
+PixelSpacing = [4.0, 4.0]  # Row/column spacing [mm, mm]
+SliceThickness = "3.0"  # Slice thickness (mm)
+SpacingBetweenSlices = "3.0"  # Slice spacing (mm)
+ImagePositionPatient = [0.0, 0.0, 0.0]  # Image position [x,y,z] mm; frame/slice specific
+ImageOrientationPatient = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0]  # Row/column direction cosines [6 values]
+SeriesType = ["STATIC", "IMAGE"]  # PET series type (multi-valued CS)
+CountsSource = "EMISSION"  # PET counts source (EMISSION or TRANSMISSION)
+ReconstructionDiameter = "600.0"  # Reconstruction diameter (mm)
+PETFrameCorrectionFactorsSequence = None  # Enhanced PET frame corrections (DICOM SQ); supply verified structure
+DecayCorrectionDateTime = "20261010100000"  # Enhanced PET decay correction reference (DT)  # Changing is not Recommended
+DecayCorrected = "YES"  # Enhanced PET decay correction flag YES/NO  # Changing is not Recommended
+AttenuationCorrected = "YES"  # Enhanced PET attenuation correction flag YES/NO
+ScatterCorrected = "YES"  # Enhanced PET scatter correction flag YES/NO
+RandomsCorrected = "YES"  # Enhanced PET randoms correction flag YES/NO
+erode_voxels = "0"  # Legacy application-only setting; NOT a DICOM attribute
 print(result)
 ```
 
@@ -773,7 +836,69 @@ out, headers = radiuma_suv_from_input(
 from radiuma_suv import radiuma_suv_from_input
 out, headers = radiuma_suv_from_input(
     "PET_Input", parameter_estimation="ON", output_path="SUV_Output"
-)
+)PatientWeight = "75.5"  # Patient weight (kg); patient-specific  # Changing is not Recommended
+PatientAge = "045Y"  # Age (DICOM AS format); patient-specific
+PatientSize = "1.75"  # Height (m); patient-specific  # Changing is not Recommended
+PatientSex = "M"  # DICOM M/F/O; patient-specific  # Changing is not Recommended
+RadionuclideTotalDose = "370000000"  # Administered dose; conventional PET Bq, Enhanced PET MBq; must be verified against source IOD  # Changing is not Recommended
+RadionuclideHalfLife = "6586.2"  # Radionuclide half-life (s); must match actual tracer  # Changing is not Recommended
+RadiopharmaceuticalStartTime = "093015"  # Administration start time (TM, HHMMSS); deprecated, prefer full DateTime  # Changing is not Recommended
+RadiopharmaceuticalStartDateTime = "20261010093015"  # Administration start datetime (DT)  # Changing is not Recommended
+RadionuclidePositronFraction = "0.967"  # Radionuclide positron fraction [0,1]
+RadiopharmaceuticalSpecificActivity = "1000000000"  # Specific activity in Bq/micromole
+RadiopharmaceuticalVolume = "5.0"  # Administered radiopharmaceutical volume (cm^3)
+RadiopharmaceuticalStopTime = "093115"  # Administration stop time (TM); deprecated, prefer full DateTime
+RadiopharmaceuticalStopDateTime = None  # Standard DICOM DT (0018,1079); use actual recorded stop datetime
+ActualFrameDuration = "180000"  # Acquisition-frame duration (ms)  # Changing is not Recommended
+FrameReferenceTime = "90000"  # Frame reference time (ms)  # Changing is not Recommended
+AcquisitionDate = "20261010"  # Acquisition date (DA YYYYMMDD)  # Changing is not Recommended
+AcquisitionTime = "100000"  # Acquisition time (TM HHMMSS)  # Changing is not Recommended
+SeriesDate = "20261010"  # Series date (DA YYYYMMDD)  # Changing is not Recommended
+SeriesTime = "095500"  # Series time (TM HHMMSS)  # Changing is not Recommended
+FrameTime = "1000"  # Frame time (ms); conditional on acquisition type
+TriggerTime = "0"  # Trigger time (ms); conditional on acquisition type
+NominalInterval = "800"  # Nominal interval (ms); conditional on gated acquisition
+IntervalsAcquired = "1000"  # Count of intervals acquired; conditional
+IntervalsRejected = "10"  # Count of intervals rejected; conditional
+NumberOfTimeSlices = "1"  # Number of time slices; conditional
+NumberOfTimeSlots = "1"  # Number of time slots; conditional
+Units = "BQML"  # PET pixel-value units (e.g. BQML, GML, CM2ML, CNTS)  # Changing is not Recommended
+SUVType = "BW"  # SUV normalization type (e.g. BW)  # Changing is not Recommended
+RescaleSlope = "1.0"  # Stored-pixel rescale slope (DS)  # Changing is not Recommended
+RescaleIntercept = "0.0"  # Stored-pixel rescale intercept (DS)  # Changing is not Recommended
+PhilipsSUVScaleFactor = None  # Philips vendor-private factor; not a public DICOM keyword  # Changing is not Recommended
+PhilipsActivityConcentrationScaleFactor = None  # Philips vendor-private activity scaling; not a public DICOM keyword  # Changing is not Recommended
+DecayCorrection = "START"  # Decay correction reference (START, ADMIN, NONE)  # Changing is not Recommended
+DecayFactor = "1.2"  # Decay factor actually applied
+DoseCalibrationFactor = "1.0"  # Dose calibration factor actually applied
+SliceSensitivityFactor = "1.0"  # Slice sensitivity correction factor actually applied
+ScatterFractionFactor = "0.25"  # Scatter fraction correction factor actually applied
+DeadTimeFactor = "1.05"  # Detector dead-time factor actually applied
+PrimaryPromptsCountsAccumulated = "10000000"  # Primary accumulated prompt counts
+SecondaryCountsAccumulated = "1500000"  # Secondary accumulated counts
+CorrectedImage = ["ATTN", "SCAT", "DECY", "RAN"]  # Applied correction codes (DICOM multi-valued CS)
+RandomsCorrectionMethod = "DLYD"  # Randoms correction method (e.g. DLYD)
+AttenuationCorrectionMethod = "CT-based attenuation correction"  # Attenuation correction method (descriptive text)
+ScatterCorrectionMethod = "Model-based scatter correction"  # Scatter correction method (descriptive text)
+ReconstructionMethod = "OSEM"  # Reconstruction method (descriptive text)
+Rows = 256  # Image rows (US integer); must match NumPy array
+Columns = 256  # Image columns (US integer); must match NumPy array
+PixelSpacing = [4.0, 4.0]  # Row/column spacing [mm, mm]
+SliceThickness = "3.0"  # Slice thickness (mm)
+SpacingBetweenSlices = "3.0"  # Slice spacing (mm)
+ImagePositionPatient = [0.0, 0.0, 0.0]  # Image position [x,y,z] mm; frame/slice specific
+ImageOrientationPatient = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0]  # Row/column direction cosines [6 values]
+SeriesType = ["STATIC", "IMAGE"]  # PET series type (multi-valued CS)
+CountsSource = "EMISSION"  # PET counts source (EMISSION or TRANSMISSION)
+ReconstructionDiameter = "600.0"  # Reconstruction diameter (mm)
+PETFrameCorrectionFactorsSequence = None  # Enhanced PET frame corrections (DICOM SQ); supply verified structure
+DecayCorrectionDateTime = "20261010100000"  # Enhanced PET decay correction reference (DT)  # Changing is not Recommended
+DecayCorrected = "YES"  # Enhanced PET decay correction flag YES/NO  # Changing is not Recommended
+AttenuationCorrected = "YES"  # Enhanced PET attenuation correction flag YES/NO
+ScatterCorrected = "YES"  # Enhanced PET scatter correction flag YES/NO
+RandomsCorrected = "YES"  # Enhanced PET randoms correction flag YES/NO
+erode_voxels = "0"  # Legacy application-only setting; NOT a DICOM attribute
+
 ```
 
 ### Example 3: NumPy data
