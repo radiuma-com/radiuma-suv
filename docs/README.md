@@ -21,7 +21,7 @@ The code provides three main interfaces:
 ## 🔍 Table of Contents
 
 - [🎥 YouTube Tutorials](#-youtube-tutorials)
-- [🧩 IBSI Standardization & Calibration](#-IBSI-standardization-&-Calibration)
+- [🧩 IBSI Standardization & Calibration](#-ibsi-standardization--calibration)
 - [✨ Key Features](#-key-features)
 - [📚 Library Usage](#-library-usage)
     - [💻 Standalone Mode](#standalone-mode)
