@@ -2,7 +2,7 @@
 
 <img src="https://github.com/radiuma-com/radiuma-suv/blob/main/docs/Vibrant%20Radiuma-SUV%20Contour%20Logo%20-%20Copy.png" alt="Radiuma-SUV Logo" width="250"/>
 
-<h1>Radiuma-SUV</h1>
+<h1>radiuma-suv</h1>
 </div>
 
 # radiuma_suv: PET to SUVbw Conversion – Python Script and Library
