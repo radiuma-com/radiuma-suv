@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/radiuma-com/radiuma-suv/blob/main/docs/Vibrant%20Radiuma-SUV%20Contour%20Logo%20-%20Copy.png" alt="Radiuma-SUV Logo" width="250"/>
+<img src="https://raw.githubusercontent.com/radiuma-com/radiuma-suv/main/docs/Vibrant%20Radiuma-SUV%20Contour%20Logo%20-%20Copy.png?utm_source=chatgpt.com" width="250"/>
 </div>
 
 # radiuma_suv: PET to SUVbw Conversion – Python Script and Library
