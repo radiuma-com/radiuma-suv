@@ -15,7 +15,7 @@
 The code provides three main interfaces:
 
 - **`radiuma_suv(input_array, input_metadata, parameter_estimation="OFF")`**: Converts a 2D/3D PET NumPy array into a floating-point SUVbw array and returns the corresponding metadata dictionary.
-- **`radiuma_suv_from_input(image_input, parameter_estimation="OFF", output_path=None)`**: Automatically detects supported PET inputs and produces SUVbw outputs in the corresponding format (NumPy array or derived DICOM file/directory).
+- **`Radiuma_SUV_from_input(image_input, parameter_estimation="OFF", output_path=None)`**: Automatically detects supported PET inputs and produces SUVbw outputs in the corresponding format (NumPy array or derived DICOM file/directory).
 - **`RadiumaSUVLoader(parameter_estimation="OFF", pet_metadata=None, output_path=None)`**: Provides an object-oriented interface for PET-to-SUVbw conversion through the `.convert(image_input)` method.
 
 **Parameter Estimation:** `"OFF"` uses existing DICOM metadata without filling missing fields, while `"ON"` fills eligible missing metadata using predefined configuration values. Original DICOM files are not overwritten.
@@ -152,9 +152,9 @@ Import the conversion functions into another Python application, pipeline, or GU
 **Option A: DICOM file or directory**
 
 ```python
-from radiuma_suv import radiuma_suv_from_input
+from radiuma_suv import Radiuma_SUV_from_input
 
-output, metadata = radiuma_suv_from_input(
+output, metadata = Radiuma_SUV_from_input(
     image_input="PET_Input",
     parameter_estimation="OFF",
     output_path="SUV_Output"
@@ -162,9 +162,9 @@ output, metadata = radiuma_suv_from_input(
 ```
 
 ```python
-from radiuma_suv import radiuma_suv_from_input
+from radiuma_suv import Radiuma_SUV_from_input
 
-output, metadata = radiuma_suv_from_input(
+output, metadata = Radiuma_SUV_from_input(
     image_input="PET_Input",
     parameter_estimation="ON",
     output_path="SUV_Output"
@@ -603,8 +603,8 @@ The notebook contains an example `if __name__ == "__main__":` block but **does n
 
 ```python
 # convert_pet.py
-from radiuma_suv import radiuma_suv_from_input
-path, headers = radiuma_suv_from_input("pet_scan.dcm", parameter_estimation="OFF")
+from radiuma_suv import Radiuma_SUV_from_input
+path, headers = Radiuma_SUV_from_input("pet_scan.dcm", parameter_estimation="OFF")
 print(path)
 ```
 
@@ -655,7 +655,7 @@ Patients/
 
 The source searches directories recursively, reads DICOM headers, selects `Modality=PT`, and groups series by their `SeriesInstanceUID` and folder. A DICOM series spanning different source folders is rejected by the writer. The corresponding output folders preserve relative structure with `_processed` naming.
 
-**Output must not be inside the source directory.** Existing destinations are not overwritten. Non-DICOM files may be skipped during directory discovery, but `.nii`, `.nii.gz`, `.nrrd`, and `.nhdr` are not valid radiuma_suv PET inputs. For NumPy, pass an in-memory `ndarray` and DICOM metadata; a `.npy` *path* is not accepted by `radiuma_suv_from_input`.
+**Output must not be inside the source directory.** Existing destinations are not overwritten. Non-DICOM files may be skipped during directory discovery, but `.nii`, `.nii.gz`, `.nrrd`, and `.nhdr` are not valid radiuma_suv PET inputs. For NumPy, pass an in-memory `ndarray` and DICOM metadata; a `.npy` *path* is not accepted by `Radiuma_SUV_from_input`.
 
 ## 📋 Synthesize Missing Inputs
 
@@ -720,11 +720,11 @@ Converts an in-memory PET NumPy array to SUVbw. Returns `(suv_array, output_meta
 
 Converts an in-memory PET NumPy array to SUVbw, it replace missed parameters in input image DICOM header with default vlues defined in code. Returns `(suv_array, output_metadata)`.
 
-### `radiuma_suv_from_input(image_input, parameter_estimation="OFF", output_path=None)`
+### `Radiuma_SUV_from_input(image_input, parameter_estimation="OFF", output_path=None)`
 
 Detects input representation and returns a matching result: a NumPy array or a new DICOM output file/folder path, plus corresponding metadata. DICOM source objects are not deliberately overwritten.
 
-### `radiuma_suv_from_input(image_input, parameter_estimation="ON", output_path=None)`
+### `Radiuma_SUV_from_input(image_input, parameter_estimation="ON", output_path=None)`
 Detects input representation and returns a matching result: a new DICOM output file/folder path, it replace missed parameters in input image DICOM header with default vlues defined in code. DICOM source objects are not deliberately overwritten.
 
 
@@ -755,14 +755,14 @@ Detects input representation and returns a matching result: a new DICOM output f
 ### Example 1: Single DICOM
 
 ```python
-from radiuma_suv import radiuma_suv_from_input
-result, meta = radiuma_suv_from_input("pet.dcm", parameter_estimation="OFF")
+from radiuma_suv import Radiuma_SUV_from_input
+result, meta = Radiuma_SUV_from_input("pet.dcm", parameter_estimation="OFF")
 
 print(result)
 ```
 ```python
-from radiuma_suv import radiuma_suv_from_input
-result, meta = radiuma_suv_from_input("pet.dcm", parameter_estimation="ON")
+from radiuma_suv import Radiuma_SUV_from_input
+result, meta = Radiuma_SUV_from_input("pet.dcm", parameter_estimation="ON")
 
 PatientWeight = "75.5"  # Patient weight (kg); patient-specific  # Changing is not Recommended
 PatientAge = "045Y"  # Age (DICOM AS format); patient-specific
@@ -832,14 +832,14 @@ print(result)
 ### Example 2: Multiple PET folders
 
 ```python
-from radiuma_suv import radiuma_suv_from_input
-out, headers = radiuma_suv_from_input(
+from radiuma_suv import Radiuma_SUV_from_input
+out, headers = Radiuma_SUV_from_input(
     "PET_Input", parameter_estimation="OFF", output_path="SUV_Output"
 )
 ```
 ```python
-from radiuma_suv import radiuma_suv_from_input
-out, headers = radiuma_suv_from_input(
+from radiuma_suv import Radiuma_SUV_from_input
+out, headers = Radiuma_SUV_from_input(
     "PET_Input", parameter_estimation="ON", output_path="SUV_Output"
 )
 PatientWeight = "75.5"  # Patient weight (kg); patient-specific  # Changing is not Recommended
