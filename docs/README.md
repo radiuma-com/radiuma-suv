@@ -720,11 +720,11 @@ Converts an in-memory PET NumPy array to SUVbw. Returns `(suv_array, output_meta
 
 Converts an in-memory PET NumPy array to SUVbw, it replace missed parameters in input image DICOM header with default vlues defined in code. Returns `(suv_array, output_metadata)`.
 
-### `Radiuma_SUV_from_input(image_input, parameter_estimation="OFF", output_path=None)`
+### `radiuma_suv_from_input(image_input, parameter_estimation="OFF", output_path=None)`
 
 Detects input representation and returns a matching result: a NumPy array or a new DICOM output file/folder path, plus corresponding metadata. DICOM source objects are not deliberately overwritten.
 
-### `Radiuma_SUV_from_input(image_input, parameter_estimation="ON", output_path=None)`
+### `radiuma_suv_from_input(image_input, parameter_estimation="ON", output_path=None)`
 Detects input representation and returns a matching result: a new DICOM output file/folder path, it replace missed parameters in input image DICOM header with default vlues defined in code. DICOM source objects are not deliberately overwritten.
 
 
