@@ -962,7 +962,7 @@ suv, meta = radiuma_suv(pixels, matching_pet_dicom_metadata, "ON")
 
 
 ```text
-v1.0.1 
+v1.0.6 
 - Conventional PET DICOM to SUVbw
 - Enhanced multi-frame PET to SUVbw
 - NumPy input and metadata output
