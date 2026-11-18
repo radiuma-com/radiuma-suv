@@ -152,9 +152,9 @@ Import the conversion functions into another Python application, pipeline, or GU
 **Option A: DICOM file or directory**
 
 ```python
-from radiuma_suv import Radiuma_SUV_from_input
+from radiuma_suv import radiuma_suv_from_input
 
-output, metadata = Radiuma_SUV_from_input(
+output, metadata = radiuma_suv_from_input(
     image_input="PET_Input",
     parameter_estimation="OFF",
     output_path="SUV_Output"
@@ -162,9 +162,9 @@ output, metadata = Radiuma_SUV_from_input(
 ```
 
 ```python
-from radiuma_suv import Radiuma_SUV_from_input
+from radiuma_suv import radiuma_suv_from_input
 
-output, metadata = Radiuma_SUV_from_input(
+output, metadata = radiuma_suv_from_input(
     image_input="PET_Input",
     parameter_estimation="ON",
     output_path="SUV_Output"
@@ -603,8 +603,8 @@ The notebook contains an example `if __name__ == "__main__":` block but **does n
 
 ```python
 # convert_pet.py
-from radiuma_suv import Radiuma_SUV_from_input
-path, headers = Radiuma_SUV_from_input("pet_scan.dcm", parameter_estimation="OFF")
+from radiuma_suv import radiuma_suv_from_input
+path, headers = radiuma_suv_from_input("pet_scan.dcm", parameter_estimation="OFF")
 print(path)
 ```
 
@@ -655,7 +655,7 @@ Patients/
 
 The source searches directories recursively, reads DICOM headers, selects `Modality=PT`, and groups series by their `SeriesInstanceUID` and folder. A DICOM series spanning different source folders is rejected by the writer. The corresponding output folders preserve relative structure with `_processed` naming.
 
-**Output must not be inside the source directory.** Existing destinations are not overwritten. Non-DICOM files may be skipped during directory discovery, but `.nii`, `.nii.gz`, `.nrrd`, and `.nhdr` are not valid radiuma_suv PET inputs. For NumPy, pass an in-memory `ndarray` and DICOM metadata; a `.npy` *path* is not accepted by `Radiuma_SUV_from_input`.
+**Output must not be inside the source directory.** Existing destinations are not overwritten. Non-DICOM files may be skipped during directory discovery, but `.nii`, `.nii.gz`, `.nrrd`, and `.nhdr` are not valid radiuma_suv PET inputs. For NumPy, pass an in-memory `ndarray` and DICOM metadata; a `.npy` *path* is not accepted by `radiuma_suv_from_input`.
 
 ## 📋 Synthesize Missing Inputs
 
@@ -755,14 +755,14 @@ Detects input representation and returns a matching result: a new DICOM output f
 ### Example 1: Single DICOM
 
 ```python
-from radiuma_suv import Radiuma_SUV_from_input
-result, meta = Radiuma_SUV_from_input("pet.dcm", parameter_estimation="OFF")
+from radiuma_suv import radiuma_suv_from_input
+result, meta = radiuma_suv_from_input("pet.dcm", parameter_estimation="OFF")
 
 print(result)
 ```
 ```python
-from radiuma_suv import Radiuma_SUV_from_input
-result, meta = Radiuma_SUV_from_input("pet.dcm", parameter_estimation="ON")
+from radiuma_suv import radiuma_suv_from_input
+result, meta = radiuma_suv_from_input("pet.dcm", parameter_estimation="ON")
 
 PatientWeight = "75.5"  # Patient weight (kg); patient-specific  # Changing is not Recommended
 PatientAge = "045Y"  # Age (DICOM AS format); patient-specific
@@ -832,14 +832,14 @@ print(result)
 ### Example 2: Multiple PET folders
 
 ```python
-from radiuma_suv import Radiuma_SUV_from_input
-out, headers = Radiuma_SUV_from_input(
+from radiuma_suv import radiuma_suv_from_input
+out, headers = radiuma_suv_from_input(
     "PET_Input", parameter_estimation="OFF", output_path="SUV_Output"
 )
 ```
 ```python
-from radiuma_suv import Radiuma_SUV_from_input
-out, headers = Radiuma_SUV_from_input(
+from radiuma_suv import radiuma_suv_from_input
+out, headers = radiuma_suv_from_input(
     "PET_Input", parameter_estimation="ON", output_path="SUV_Output"
 )
 PatientWeight = "75.5"  # Patient weight (kg); patient-specific  # Changing is not Recommended
