@@ -15,7 +15,7 @@
 The code provides three main interfaces:
 
 - **`radiuma_suv(input_array, input_metadata, parameter_estimation="OFF")`**: Converts a 2D/3D PET NumPy array into a floating-point SUVbw array and returns the corresponding metadata dictionary.
-- **`Radiuma_SUV_from_input(image_input, parameter_estimation="OFF", output_path=None)`**: Automatically detects supported PET inputs and produces SUVbw outputs in the corresponding format (NumPy array or derived DICOM file/directory).
+- **`radiuma_suv_from_input(image_input, parameter_estimation="OFF", output_path=None)`**: Automatically detects supported PET inputs and produces SUVbw outputs in the corresponding format (NumPy array or derived DICOM file/directory).
 - **`RadiumaSUVLoader(parameter_estimation="OFF", pet_metadata=None, output_path=None)`**: Provides an object-oriented interface for PET-to-SUVbw conversion through the `.convert(image_input)` method.
 
 **Parameter Estimation:** `"OFF"` uses existing DICOM metadata without filling missing fields, while `"ON"` fills eligible missing metadata using predefined configuration values. Original DICOM files are not overwritten.
@@ -913,6 +913,7 @@ erode_voxels = "0"  # Legacy application-only setting; NOT a DICOM attribute
 import numpy as np
 from radiuma_suv import radiuma_suv
 pixels = np.load("pet_pixels.npy")
+matching_pet_dicom_metadata = np.load("pet_metadata.npy")
 # Load the genuine DICOM metadata for the same scan.
 suv, meta = radiuma_suv(pixels, matching_pet_dicom_metadata, "OFF")
 ```
@@ -920,6 +921,7 @@ suv, meta = radiuma_suv(pixels, matching_pet_dicom_metadata, "OFF")
 import numpy as np
 from radiuma_suv import radiuma_suv
 pixels = np.load("pet_pixels.npy")
+matching_pet_dicom_metadata = np.load("pet_metadata.npy")
 # Load the genuine DICOM metadata for the same scan.
 suv, meta = radiuma_suv(pixels, matching_pet_dicom_metadata, "ON")
 ```
