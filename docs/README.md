@@ -910,20 +910,52 @@ erode_voxels = "0"  # Legacy application-only setting; NOT a DICOM attribute
 ### Example 3: NumPy data
 
 ```python
+
 import numpy as np
 from radiuma_suv import radiuma_suv
-pixels = np.load("pet_pixels.npy")
-matching_pet_dicom_metadata = np.load("pet_metadata.npy")
-# Load the genuine DICOM metadata for the same scan.
-suv, meta = radiuma_suv(pixels, matching_pet_dicom_metadata, "OFF")
+
+# Load PET image pixels
+pixels = np.load("dicom_image.npy")
+
+# Load corresponding DICOM metadata as a dictionary
+matching_pet_dicom_metadata = np.load(
+    "metadata.npy",
+    allow_pickle=True
+).item()
+
+# Convert PET image to SUVbw
+suv, meta = radiuma_suv(
+    input_array=pixels,
+    input_metadata=matching_pet_dicom_metadata,
+    parameter_estimation="OFF"
+)
+
+# Display results
+print("SUVbw conversion completed")
 ```
 ```python
+
 import numpy as np
 from radiuma_suv import radiuma_suv
-pixels = np.load("pet_pixels.npy")
-matching_pet_dicom_metadata = np.load("pet_metadata.npy")
-# Load the genuine DICOM metadata for the same scan.
-suv, meta = radiuma_suv(pixels, matching_pet_dicom_metadata, "ON")
+
+# Load PET image pixels
+pixels = np.load("dicom_image.npy")
+
+# Load corresponding DICOM metadata as a dictionary
+matching_pet_dicom_metadata = np.load(
+    "metadata.npy",
+    allow_pickle=True
+).item()
+
+# Convert PET image to SUVbw
+suv, meta = radiuma_suv(
+    input_array=pixels,
+    input_metadata=matching_pet_dicom_metadata,
+    parameter_estimation="ON"
+)
+
+# Display results
+print("SUVbw conversion completed")
 ```
 ## ⚡ Performance Tips
 
